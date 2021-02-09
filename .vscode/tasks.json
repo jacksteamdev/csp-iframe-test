@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "start",
+      "dependsOrder": "parallel",
+      "dependsOn": ["start:crx", "start:serve"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "npm",
+      "script": "start:crx",
+      "problemMatcher": [],
+      "label": "start:crx",
+      "detail": "rollup -c -w",
+      "presentation": {
+				"reveal": "always",
+        "panel": "dedicated",
+        "group": "start"
+      }
+    },
+    {
+      "type": "npm",
+      "script": "start:serve",
+      "problemMatcher": [],
+      "label": "start:serve",
+      "detail": "serve dist",
+      "presentation": {
+				"reveal": "always",
+        "panel": "dedicated",
+        "group": "start"
+      }
+    }
+  ]
+}
